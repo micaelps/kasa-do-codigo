@@ -22,8 +22,7 @@ class BuscaAutorController(val autores: AutorRepository) {
 
     fun porEmail(email: String) = autores.findByEmail(email)
             .map(::DetalhesAutorResponse)
-            .map { d: DetalhesAutorResponse -> HttpResponse.ok(d) }
+            .map { d -> HttpResponse.ok(d) }
             .orElseGet { HttpResponse.notFound() }
-
 
 }

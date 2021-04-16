@@ -8,8 +8,13 @@ import javax.persistence.Id
 class Autor(
     val nome: String?,
     val email: String?,
-    val descricao: String?
+    var descricao: String?
 ) {
+    fun atualizaDescricao(descricao: String): Autor {
+        this.descricao = descricao
+        return this
+    }
+
     @Id
     @GeneratedValue
     var id: Long? = null
